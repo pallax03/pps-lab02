@@ -27,7 +27,7 @@ object Optionals:
       case Just(a) => if (f(a)) Just(a) else Empty()
       case _ => Empty()
 
-@main def tryOptionals: Unit =
+@main def tryOptionals(): Unit =
   import Optionals.* // to work with Optionals (to see OptionalInt type)
   import OptionalInt.* // to directly access algorithms
 
