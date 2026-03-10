@@ -11,4 +11,7 @@ object Expr:
     case Expr.Add(x: Expr, y: Expr) => evaluate(x) + evaluate(y)
     case Expr.Multiply(x: Expr, y: Expr) => evaluate(x) * evaluate(y)
 
-//  def show(e: Expr): String = e match
+  def show(e: Expr): String = e match
+    case Literal(x) => s"$x"
+    case Add(x, y) => s"(${show(x)} + ${show(y)})"
+    case Multiply(x, y) => s"(${show(x)} * ${show(y)})"
