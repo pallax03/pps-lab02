@@ -33,9 +33,9 @@ class Task4Test:
     val add: Expr = Add(x, y)
     val multiply: Expr = Multiply(add, z)
     val result: Expr = Add(add, multiply)
-    val expectedAdd: Int = evaluate(x)+evaluate(y)
-    val expectedResult: Int = expectedAdd + (expectedAdd * evaluate(z))
-    assertEquals(expectedResult, evaluate(result))
+    val expectedAdd: Int = evaluate(add)
     val expectedAddShow: String = show(add)
+    val expectedResult: Int = expectedAdd + (expectedAdd * evaluate(z))
     val expectedResultShow: String = s"($expectedAddShow + ($expectedAddShow * ${show(z)}))"
+    assertEquals(expectedResult, evaluate(result))
     assertEquals(expectedResultShow, show(result))
